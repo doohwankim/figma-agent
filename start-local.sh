@@ -6,7 +6,10 @@
 set -e
 
 SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
-cd "$SCRIPT_DIR"
+DESIGN_SYSTEM_DIR="$SCRIPT_DIR/step1/design-system"
+
+# Design System 디렉토리로 이동
+cd "$DESIGN_SYSTEM_DIR"
 
 # 설정
 STORYBOOK_PORT=6006
@@ -167,6 +170,56 @@ check_npm() {
     log_success "npm v$NPM_VERSION 확인됨"
 }
 
+# node_modules 손상 여부 확인
+check_node_modules_integrity() {
+    log_info "node_modules 무결성 확인 중..."
+
+    # node_modules가 없으면 손상된 것으로 간주
+    if [ ! -d "node_modules" ]; then
+        return 1
+    fi
+
+    # 필수 바이너리 파일 존재 확인
+    local REQUIRED_BINS=("storybook" "vite" "tsc")
+    for bin in "${REQUIRED_BINS[@]}"; do
+        if [ ! -f "node_modules/.bin/$bin" ]; then
+            log_warn "필수 바이너리 누락: $bin"
+            return 1
+        fi
+    done
+
+    # storybook 바이너리 실행 테스트 (모듈 누락 감지)
+    if ! node -e "require('./node_modules/.bin/storybook')" 2>/dev/null; then
+        # ESM 모듈인 경우 다른 방식으로 테스트
+        if ! node --input-type=module -e "import './node_modules/@storybook/cli/bin/index.cjs'" 2>/dev/null; then
+            # 직접 실행 테스트
+            if ! node_modules/.bin/storybook --version &>/dev/null; then
+                log_warn "storybook 모듈 손상 감지"
+                return 1
+            fi
+        fi
+    fi
+
+    return 0
+}
+
+# node_modules 복구
+repair_node_modules() {
+    log_warn "node_modules 손상 감지. 재설치를 시작합니다..."
+
+    # 기존 node_modules 삭제
+    if [ -d "node_modules" ]; then
+        log_info "손상된 node_modules 삭제 중..."
+        rm -rf node_modules
+    fi
+
+    # package-lock.json 기반 클린 설치
+    log_info "패키지 클린 설치 중... (시간이 소요될 수 있습니다)"
+    npm ci || npm install
+
+    log_success "node_modules 복구 완료"
+}
+
 # 패키지 의존성 확인 및 설치
 check_dependencies() {
     log_info "패키지 의존성 확인 중..."
@@ -176,6 +229,12 @@ check_dependencies() {
         log_warn "node_modules가 없습니다. 패키지 설치를 시작합니다..."
         npm install
         log_success "패키지 설치 완료"
+        return
+    fi
+
+    # node_modules 무결성 확인
+    if ! check_node_modules_integrity; then
+        repair_node_modules
         return
     fi
 
@@ -303,6 +362,14 @@ main() {
     echo "   MEDIGATE Design System"
     echo "=========================================="
     echo ""
+
+    # Design System 디렉토리 확인
+    if [ ! -d "$DESIGN_SYSTEM_DIR" ]; then
+        log_error "Design System 디렉토리가 없습니다: $DESIGN_SYSTEM_DIR"
+        exit 1
+    fi
+
+    log_info "작업 디렉토리: $DESIGN_SYSTEM_DIR"
 
     # 환경 체크
     check_node

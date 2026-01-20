@@ -1,0 +1,136 @@
+/**
+ * Checkbox Component Styles
+ * Figma 실제 값 기반 (100% 동기화)
+ *
+ * Figma 컴포넌트 사양:
+ * - Sizes: lg (24px), md (20px), sm (16px)
+ * - States: Enabled, Hover, Disabled
+ * - isChecked: True, False
+ * - gap: 4px (icon과 label 사이)
+ */
+
+.checkbox {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--spacing-1);
+  cursor: pointer;
+  user-select: none;
+  font-family: var(--font-family-base);
+}
+
+.checkbox.disabled {
+  cursor: not-allowed;
+}
+
+.input {
+  position: absolute;
+  opacity: 0;
+  width: 0;
+  height: 0;
+  pointer-events: none;
+}
+
+/* Checkmark Box */
+.checkmark {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: var(--radius-sm);
+  border: 1.5px solid var(--color-gray-400);
+  background-color: var(--color-white);
+  transition: var(--transition-fast);
+  flex-shrink: 0;
+}
+
+.checkmark:hover {
+  border-color: var(--color-primary);
+}
+
+/* Size Variants - Figma 실제 값 */
+.size-lg .checkmark {
+  width: 24px;
+  height: 24px;
+}
+
+.size-lg .icon {
+  width: 16px;
+  height: 16px;
+}
+
+.size-lg .label {
+  font-size: var(--text-body-lg-size);
+  line-height: var(--text-body-lg-line-height);
+}
+
+.size-md .checkmark {
+  width: 20px;
+  height: 20px;
+}
+
+.size-md .icon {
+  width: 14px;
+  height: 14px;
+}
+
+.size-md .label {
+  font-size: var(--text-body-md-size);
+  line-height: var(--text-body-md-line-height);
+}
+
+.size-sm .checkmark {
+  width: 16px;
+  height: 16px;
+}
+
+.size-sm .icon {
+  width: 10px;
+  height: 10px;
+}
+
+.size-sm .label {
+  font-size: var(--text-body-sm-size);
+  line-height: var(--text-body-sm-line-height);
+}
+
+/* Checked State */
+.checkbox.checked .checkmark {
+  background-color: var(--color-primary);
+  border-color: var(--color-primary);
+}
+
+.checkbox.checked .checkmark:hover {
+  background-color: var(--color-primary-hover);
+  border-color: var(--color-primary-hover);
+}
+
+.icon {
+  color: var(--color-white);
+}
+
+/* Label */
+.label {
+  color: var(--color-text-primary);
+  font-weight: var(--font-weight-medium);
+  letter-spacing: var(--letter-spacing-default);
+}
+
+/* Disabled State - Figma: rgba(67, 73, 78, 0.32) */
+.checkbox.disabled .checkmark {
+  background-color: var(--color-gray-100);
+  border-color: rgba(67, 73, 78, 0.32);
+}
+
+.checkbox.disabled.checked .checkmark {
+  background-color: rgba(67, 73, 78, 0.32);
+  border-color: rgba(67, 73, 78, 0.32);
+}
+
+.checkbox.disabled .label {
+  color: rgba(67, 73, 78, 0.32);
+}
+
+/* Focus State */
+.input:focus-visible + .checkmark {
+  outline: 2px solid var(--color-primary);
+  outline-offset: 2px;
+}

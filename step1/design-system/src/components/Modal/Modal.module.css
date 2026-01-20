@@ -1,0 +1,138 @@
+/**
+ * Modal Component Styles
+ * Figma 실제 값 기반 (100% 동기화)
+ */
+
+.overlay {
+  position: fixed;
+  inset: 0;
+  z-index: var(--z-index-modal-backdrop);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: var(--spacing-4);
+  background-color: rgba(0, 0, 0, 0.5);
+  animation: fadeIn 0.2s ease;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+.modal {
+  z-index: var(--z-index-modal);
+  display: flex;
+  flex-direction: column;
+  max-height: calc(100vh - var(--spacing-8));
+  background-color: var(--color-white);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-xl);
+  animation: slideIn 0.2s ease;
+  font-family: var(--font-family-base);
+}
+
+@keyframes slideIn {
+  from {
+    opacity: 0;
+    transform: translateY(calc(-1 * var(--spacing-5)));
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Size Variants */
+.size-sm {
+  width: 100%;
+  max-width: 400px;
+}
+
+.size-md {
+  width: 100%;
+  max-width: 560px;
+}
+
+.size-lg {
+  width: 100%;
+  max-width: 720px;
+}
+
+.size-xl {
+  width: 100%;
+  max-width: 960px;
+}
+
+.size-full {
+  width: calc(100vw - var(--spacing-8));
+  height: calc(100vh - var(--spacing-8));
+  max-width: none;
+  max-height: none;
+}
+
+/* Header */
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--spacing-4);
+  padding: var(--spacing-5) var(--spacing-6);
+  border-bottom: 1px solid var(--color-gray-200);
+}
+
+.title {
+  margin: 0;
+  font-size: var(--text-headline-sm-size);
+  font-weight: var(--font-weight-bold);
+  line-height: var(--text-headline-sm-line-height);
+  letter-spacing: var(--letter-spacing-default);
+  color: var(--color-text-primary);
+}
+
+.closeButton {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: var(--spacing-8);
+  height: var(--spacing-8);
+  padding: 0;
+  border: none;
+  border-radius: var(--radius-sm);
+  background: transparent;
+  color: var(--color-gray-500);
+  cursor: pointer;
+  transition: var(--transition-fast);
+  flex-shrink: 0;
+}
+
+.closeButton:hover {
+  background-color: var(--color-gray-100);
+  color: var(--color-text-primary);
+}
+
+.closeButton:focus-visible {
+  outline: 2px solid var(--color-primary);
+  outline-offset: 2px;
+}
+
+/* Content */
+.content {
+  flex: 1;
+  padding: var(--spacing-6);
+  overflow-y: auto;
+}
+
+/* Footer */
+.footer {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: var(--spacing-3);
+  padding: var(--spacing-4) var(--spacing-6);
+  border-top: 1px solid var(--color-gray-200);
+}

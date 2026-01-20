@@ -1,0 +1,147 @@
+/**
+ * Tab Component Styles
+ * Figma 실제 값 기반 (100% 동기화)
+ */
+
+.tabs {
+  display: inline-flex;
+  align-items: center;
+  gap: 0;
+  font-family: var(--font-family-base);
+}
+
+.tabs.fullWidth {
+  width: 100%;
+}
+
+.tabs.fullWidth .tab {
+  flex: 1;
+}
+
+/* Tab Button */
+.tab {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--spacing-2);
+  border: none;
+  background: transparent;
+  cursor: pointer;
+  font-family: inherit;
+  font-weight: var(--font-weight-medium);
+  letter-spacing: var(--letter-spacing-default);
+  color: var(--color-gray-600);
+  transition: var(--transition-fast);
+  white-space: nowrap;
+}
+
+.tab:hover:not(.disabled) {
+  color: var(--color-text-primary);
+}
+
+.tab:focus-visible {
+  outline: 2px solid var(--color-primary);
+  outline-offset: -2px;
+}
+
+.tab.active {
+  color: var(--color-primary);
+}
+
+.tab.disabled {
+  color: var(--color-gray-300);
+  cursor: not-allowed;
+}
+
+/* Size Variants */
+.size-lg .tab {
+  padding: var(--spacing-3) var(--spacing-5);
+  font-size: var(--text-body-lg-size);
+}
+
+.size-md .tab {
+  padding: 10px var(--spacing-4);
+  font-size: var(--text-body-md-size);
+}
+
+.size-sm .tab {
+  padding: var(--spacing-2) var(--spacing-3);
+  font-size: var(--text-body-sm-size);
+}
+
+/* Variant: Line */
+.variant-line {
+  border-bottom: 1px solid var(--color-gray-200);
+}
+
+.variant-line .tab {
+  position: relative;
+  margin-bottom: -1px;
+  border-bottom: 2px solid transparent;
+}
+
+.variant-line .tab.active {
+  border-bottom-color: var(--color-primary);
+}
+
+/* Variant: Enclosed */
+.variant-enclosed {
+  background-color: var(--color-gray-100);
+  border-radius: var(--radius-md);
+  padding: var(--spacing-1);
+}
+
+.variant-enclosed .tab {
+  border-radius: var(--radius-sm);
+}
+
+.variant-enclosed .tab.active {
+  background-color: var(--color-white);
+  box-shadow: var(--shadow-sm);
+}
+
+/* Variant: Pills */
+.variant-pills {
+  gap: var(--spacing-2);
+}
+
+.variant-pills .tab {
+  border-radius: var(--radius-full);
+  background-color: transparent;
+}
+
+.variant-pills .tab:hover:not(.disabled):not(.active) {
+  background-color: var(--color-gray-100);
+}
+
+.variant-pills .tab.active {
+  background-color: var(--color-primary);
+  color: var(--color-white);
+}
+
+/* Icon */
+.icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.icon svg {
+  width: var(--spacing-5);
+  height: var(--spacing-5);
+}
+
+.size-sm .icon svg {
+  width: var(--spacing-4);
+  height: var(--spacing-4);
+}
+
+.size-lg .icon svg {
+  width: var(--spacing-6);
+  height: var(--spacing-6);
+}
+
+/* Panel */
+.panel {
+  padding: var(--spacing-4) 0;
+}

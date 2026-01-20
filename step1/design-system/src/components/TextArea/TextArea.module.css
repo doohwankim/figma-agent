@@ -1,0 +1,99 @@
+/**
+ * TextArea Component Styles
+ * Figma 실제 값 기반 (100% 동기화)
+ */
+
+.container {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-1);
+  font-family: var(--font-family-base);
+}
+
+.container.fullWidth {
+  width: 100%;
+}
+
+/* Label */
+.label {
+  font-size: var(--text-label-md-size);
+  font-weight: var(--font-weight-medium);
+  line-height: var(--text-label-md-line-height);
+  letter-spacing: var(--letter-spacing-default);
+  color: var(--color-text-primary);
+}
+
+/* TextArea */
+.textarea {
+  border: 1px solid var(--color-gray-300);
+  border-radius: var(--radius-sm);
+  background-color: var(--color-white);
+  font-family: inherit;
+  font-weight: var(--font-weight-medium);
+  letter-spacing: var(--letter-spacing-default);
+  color: var(--color-text-primary);
+  transition: var(--transition-fast);
+  min-height: 80px;
+}
+
+.textarea:hover:not(:disabled) {
+  border-color: var(--color-gray-400);
+}
+
+.textarea:focus {
+  outline: none;
+  border-color: var(--color-primary);
+  box-shadow: 0 0 0 2px rgba(33, 148, 243, 0.2);
+}
+
+.textarea::placeholder {
+  color: var(--color-gray-400);
+}
+
+/* Size Variants */
+.size-lg {
+  padding: var(--spacing-3) var(--spacing-4);
+  font-size: var(--text-body-lg-size);
+  line-height: var(--text-body-lg-line-height);
+}
+
+.size-md {
+  padding: 10px var(--spacing-3);
+  font-size: var(--text-body-md-size);
+  line-height: var(--text-body-md-line-height);
+}
+
+.size-sm {
+  padding: var(--spacing-2) var(--spacing-3);
+  font-size: var(--text-body-sm-size);
+  line-height: var(--text-body-sm-line-height);
+}
+
+/* Error State */
+.textarea.error {
+  border-color: var(--color-error);
+}
+
+.textarea.error:focus {
+  box-shadow: 0 0 0 2px rgba(255, 32, 25, 0.2);
+}
+
+/* Disabled State */
+.textarea.disabled {
+  background-color: var(--color-gray-100);
+  border-color: var(--color-gray-200);
+  color: var(--color-gray-400);
+  cursor: not-allowed;
+}
+
+/* Message */
+.message {
+  font-size: var(--text-label-sm-size);
+  line-height: var(--text-label-sm-line-height);
+  letter-spacing: var(--letter-spacing-default);
+  color: var(--color-gray-500);
+}
+
+.messageError {
+  color: var(--color-error);
+}

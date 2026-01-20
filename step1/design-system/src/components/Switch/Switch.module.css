@@ -1,0 +1,161 @@
+/**
+ * Switch Component Styles
+ * Figma 실제 값 기반 (100% 동기화)
+ *
+ * Figma 컴포넌트 사양:
+ * - Sizes: lg, md, sm
+ * - States: Enabled, Disabled
+ * - On/Off: on, off
+ * - Label: True, False
+ * - gap: 4px
+ */
+
+.switch {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--spacing-1);
+  font-family: var(--font-family-base);
+}
+
+.switch.disabled {
+  cursor: not-allowed;
+  opacity: 0.5;
+}
+
+.input {
+  position: absolute;
+  opacity: 0;
+  width: 0;
+  height: 0;
+  pointer-events: none;
+}
+
+/* Track (배경) */
+.track {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  border: none;
+  cursor: pointer;
+  transition: var(--transition-fast);
+  background-color: var(--color-gray-300);
+  padding: 0;
+}
+
+.track:hover {
+  background-color: var(--color-gray-400);
+}
+
+.track:focus-visible {
+  outline: 2px solid var(--color-primary);
+  outline-offset: 2px;
+}
+
+/* Thumb (동그라미) */
+.thumb {
+  position: absolute;
+  background-color: var(--color-white);
+  border-radius: var(--radius-full);
+  transition: var(--transition-fast);
+  box-shadow: var(--shadow-sm);
+}
+
+/* Size Variants - lg */
+.size-lg .track {
+  width: 52px;
+  height: 28px;
+  border-radius: 14px;
+}
+
+.size-lg .thumb {
+  width: 24px;
+  height: 24px;
+  left: 2px;
+}
+
+.size-lg.checked .thumb {
+  left: 26px;
+}
+
+.size-lg .label {
+  font-size: var(--text-body-lg-size);
+  line-height: var(--text-body-lg-line-height);
+}
+
+/* Size Variants - md */
+.size-md .track {
+  width: 44px;
+  height: 24px;
+  border-radius: 12px;
+}
+
+.size-md .thumb {
+  width: 20px;
+  height: 20px;
+  left: 2px;
+}
+
+.size-md.checked .thumb {
+  left: 22px;
+}
+
+.size-md .label {
+  font-size: var(--text-body-md-size);
+  line-height: var(--text-body-md-line-height);
+}
+
+/* Size Variants - sm */
+.size-sm .track {
+  width: 36px;
+  height: 20px;
+  border-radius: 10px;
+}
+
+.size-sm .thumb {
+  width: 16px;
+  height: 16px;
+  left: 2px;
+}
+
+.size-sm.checked .thumb {
+  left: 18px;
+}
+
+.size-sm .label {
+  font-size: var(--text-body-sm-size);
+  line-height: var(--text-body-sm-line-height);
+}
+
+/* Checked State */
+.switch.checked .track {
+  background-color: var(--color-primary);
+}
+
+.switch.checked .track:hover {
+  background-color: var(--color-primary-hover);
+}
+
+/* Label */
+.label {
+  color: var(--color-text-primary);
+  font-weight: var(--font-weight-medium);
+  letter-spacing: var(--letter-spacing-default);
+}
+
+/* Disabled State */
+.switch.disabled .track {
+  background-color: var(--color-gray-200);
+  cursor: not-allowed;
+}
+
+.switch.disabled .track:hover {
+  background-color: var(--color-gray-200);
+}
+
+.switch.disabled.checked .track {
+  background-color: rgba(33, 148, 243, 0.4);
+}
+
+.switch.disabled .label {
+  color: rgba(67, 73, 78, 0.32);
+}

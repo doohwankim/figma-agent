@@ -1,0 +1,148 @@
+/**
+ * Badge Component Styles
+ * MEDIGATE Design System
+ */
+
+.badge {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--gap-xs);
+  font-family: var(--font-family-base);
+  font-weight: var(--font-weight-semibold);
+  white-space: nowrap;
+  transition: var(--transition-fast);
+}
+
+/* ========================================
+   Type Variants
+   ======================================== */
+.type-default {
+  border-radius: var(--radius-sm);
+}
+
+.type-pill {
+  border-radius: var(--radius-full);
+}
+
+/* ========================================
+   Size Variants
+   ======================================== */
+.size-tiny {
+  padding: var(--spacing-0-5) var(--spacing-1-5);
+  font-size: var(--text-label-xs-size);
+  line-height: 1.2;
+}
+
+.size-xs {
+  padding: var(--spacing-0-5) var(--spacing-2);
+  font-size: var(--font-size-xs);
+  line-height: 1.3;
+}
+
+.size-sm {
+  padding: var(--spacing-1) var(--spacing-2-5);
+  font-size: var(--font-size-xs);
+  line-height: 1.3;
+}
+
+.size-md {
+  padding: var(--spacing-1-5) var(--spacing-3);
+  font-size: var(--font-size-sm);
+  line-height: 1.4;
+}
+
+/* ========================================
+   Color Variants - Filled
+   ======================================== */
+.color-primary {
+  background-color: var(--color-primary);
+  color: var(--color-white);
+}
+
+.color-primary-subtle {
+  background-color: var(--color-primary-subtle);
+  color: var(--color-blue-700);
+}
+
+.color-secondary {
+  background-color: var(--color-secondary);
+  color: var(--color-white);
+}
+
+.color-success {
+  background-color: var(--color-success);
+  color: var(--color-white);
+}
+
+.color-success-subtle {
+  background-color: var(--color-success-subtle);
+  color: var(--color-teal-700);
+}
+
+.color-warning {
+  background-color: var(--color-warning);
+  color: var(--color-black);
+}
+
+.color-warning-subtle {
+  background-color: var(--color-warning-subtle);
+  color: var(--color-yellow-800);
+}
+
+.color-error {
+  background-color: var(--color-error);
+  color: var(--color-white);
+}
+
+.color-error-subtle {
+  background-color: var(--color-error-subtle);
+  color: var(--color-red-700);
+}
+
+.color-essential {
+  background-color: var(--color-essential);
+  color: var(--color-white);
+}
+
+.color-essential-subtle {
+  background-color: var(--color-essential-subtle);
+  color: var(--color-gray-700);
+}
+
+.color-light {
+  background-color: var(--color-white);
+  color: var(--color-gray-700);
+  border: 1px solid var(--color-border-default);
+}
+
+.color-tonal {
+  background-color: var(--color-gray-100);
+  color: var(--color-gray-700);
+}
+
+/* ========================================
+   Icon Variants
+   ======================================== */
+.iconWrapper {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.iconWrapper svg {
+  width: 1em;
+  height: 1em;
+}
+
+.icon-only {
+  padding: var(--spacing-1);
+}
+
+.icon-only .iconWrapper {
+  margin: 0;
+}
+
+.text {
+  display: inline-block;
+}

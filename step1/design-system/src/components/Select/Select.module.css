@@ -1,0 +1,183 @@
+/**
+ * Select Component Styles
+ * Figma 실제 값 기반 (100% 동기화)
+ *
+ * Figma 컴포넌트: Dropdown List
+ * - Size: md
+ * - State: enabled, expanded
+ */
+
+.container {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-1);
+  font-family: var(--font-family-base);
+}
+
+.container.fullWidth {
+  width: 100%;
+}
+
+/* Label */
+.label {
+  font-size: var(--text-label-md-size);
+  font-weight: var(--font-weight-medium);
+  line-height: var(--text-label-md-line-height);
+  letter-spacing: var(--letter-spacing-default);
+  color: var(--color-text-primary);
+}
+
+/* Select Button */
+.select {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border: 1px solid var(--color-gray-300);
+  border-radius: var(--radius-sm);
+  background-color: var(--color-white);
+  cursor: pointer;
+  transition: var(--transition-fast);
+}
+
+.select:hover:not(.disabled) {
+  border-color: var(--color-gray-400);
+}
+
+.select:focus:not(.disabled) {
+  outline: none;
+  border-color: var(--color-primary);
+  box-shadow: 0 0 0 2px rgba(33, 148, 243, 0.2);
+}
+
+.select.open {
+  border-color: var(--color-primary);
+}
+
+/* Size Variants */
+.size-lg {
+  padding: var(--spacing-3) var(--spacing-4);
+  gap: var(--spacing-2);
+}
+
+.size-lg .value {
+  font-size: var(--text-body-lg-size);
+}
+
+.size-md {
+  padding: 10px var(--spacing-3);
+  gap: var(--spacing-2);
+}
+
+.size-md .value {
+  font-size: var(--text-body-md-size);
+}
+
+.size-sm {
+  padding: var(--spacing-2) var(--spacing-3);
+  gap: 6px;
+}
+
+.size-sm .value {
+  font-size: var(--text-body-sm-size);
+}
+
+/* Value */
+.value {
+  flex: 1;
+  font-weight: var(--font-weight-medium);
+  letter-spacing: var(--letter-spacing-default);
+  color: var(--color-text-primary);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.value.placeholder {
+  color: var(--color-gray-400);
+}
+
+/* Arrow */
+.arrow {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--color-gray-500);
+  transition: var(--transition-fast);
+}
+
+.select.open .arrow {
+  transform: rotate(180deg);
+}
+
+/* Dropdown */
+.dropdown {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  right: 0;
+  z-index: var(--z-index-dropdown);
+  margin-top: var(--spacing-1);
+  padding: var(--spacing-1) 0;
+  background-color: var(--color-white);
+  border: 1px solid var(--color-gray-200);
+  border-radius: var(--radius-sm);
+  box-shadow: var(--shadow-lg);
+  list-style: none;
+  max-height: 240px;
+  overflow-y: auto;
+}
+
+/* Option */
+.option {
+  padding: 10px var(--spacing-3);
+  font-size: var(--text-body-md-size);
+  font-weight: var(--font-weight-medium);
+  letter-spacing: var(--letter-spacing-default);
+  color: var(--color-text-primary);
+  cursor: pointer;
+  transition: var(--transition-fast);
+}
+
+.option:hover:not(.optionDisabled) {
+  background-color: var(--color-gray-50);
+}
+
+.option.selected {
+  background-color: var(--color-primary-subtle);
+  color: var(--color-primary);
+}
+
+.option.optionDisabled {
+  color: var(--color-gray-400);
+  cursor: not-allowed;
+}
+
+/* Error State */
+.select.error {
+  border-color: var(--color-error);
+}
+
+.select.error:focus {
+  box-shadow: 0 0 0 2px rgba(255, 32, 25, 0.2);
+}
+
+.errorMessage {
+  font-size: var(--text-label-sm-size);
+  color: var(--color-error);
+}
+
+/* Disabled State */
+.select.disabled {
+  background-color: var(--color-gray-100);
+  border-color: var(--color-gray-200);
+  cursor: not-allowed;
+}
+
+.select.disabled .value {
+  color: var(--color-gray-400);
+}
+
+.select.disabled .arrow {
+  color: var(--color-gray-300);
+}

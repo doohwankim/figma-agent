@@ -1,0 +1,345 @@
+/**
+ * Button Component Styles
+ * MEDIGATE Design System
+ */
+
+.button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--gap-sm);
+  font-family: var(--font-family-base);
+  font-weight: var(--font-weight-semibold);
+  border: none;
+  cursor: pointer;
+  transition: var(--transition-fast);
+  white-space: nowrap;
+  text-decoration: none;
+}
+
+.button:focus-visible {
+  outline: 2px solid var(--color-primary);
+  outline-offset: 2px;
+}
+
+/* ========================================
+   Size Variants
+   ======================================== */
+.size-xs {
+  padding: var(--spacing-1-5) var(--spacing-3);
+  font-size: var(--font-size-xs);
+  border-radius: var(--radius-sm);
+  min-height: 28px;
+}
+
+.size-sm {
+  padding: var(--spacing-2) var(--spacing-4);
+  font-size: var(--font-size-sm);
+  border-radius: var(--radius-sm);
+  min-height: var(--spacing-8);
+}
+
+.size-md {
+  padding: var(--spacing-2-5) var(--spacing-5);
+  font-size: var(--font-size-sm);
+  border-radius: var(--radius-md);
+  min-height: var(--spacing-10);
+}
+
+.size-lg {
+  padding: var(--spacing-3) var(--spacing-6);
+  font-size: var(--font-size-md);
+  border-radius: var(--radius-md);
+  min-height: var(--spacing-12);
+}
+
+.size-xl {
+  padding: var(--spacing-4) var(--spacing-8);
+  font-size: var(--font-size-lg);
+  border-radius: var(--radius-md);
+  min-height: 56px;
+}
+
+/* ========================================
+   Variant: Filled
+   ======================================== */
+.variant-filled.color-primary {
+  background-color: var(--color-primary);
+  color: var(--color-white);
+}
+.variant-filled.color-primary:hover:not(:disabled) {
+  background-color: var(--color-primary-hover);
+}
+.variant-filled.color-primary:active:not(:disabled) {
+  background-color: var(--color-primary-active);
+}
+
+.variant-filled.color-secondary {
+  background-color: var(--color-secondary);
+  color: var(--color-white);
+}
+.variant-filled.color-secondary:hover:not(:disabled) {
+  background-color: var(--color-secondary-hover);
+}
+.variant-filled.color-secondary:active:not(:disabled) {
+  background-color: var(--color-secondary-active);
+}
+
+.variant-filled.color-success {
+  background-color: var(--color-success);
+  color: var(--color-white);
+}
+.variant-filled.color-success:hover:not(:disabled) {
+  background-color: var(--color-success-hover);
+}
+.variant-filled.color-success:active:not(:disabled) {
+  background-color: var(--color-success-active);
+}
+
+.variant-filled.color-warning {
+  background-color: var(--color-warning);
+  color: var(--color-black);
+}
+.variant-filled.color-warning:hover:not(:disabled) {
+  background-color: var(--color-warning-hover);
+}
+.variant-filled.color-warning:active:not(:disabled) {
+  background-color: var(--color-warning-active);
+}
+
+.variant-filled.color-error {
+  background-color: var(--color-error);
+  color: var(--color-white);
+}
+.variant-filled.color-error:hover:not(:disabled) {
+  background-color: var(--color-error-hover);
+}
+.variant-filled.color-error:active:not(:disabled) {
+  background-color: var(--color-error-active);
+}
+
+.variant-filled.color-essential {
+  background-color: var(--color-essential);
+  color: var(--color-white);
+}
+.variant-filled.color-essential:hover:not(:disabled) {
+  background-color: var(--color-essential-hover);
+}
+.variant-filled.color-essential:active:not(:disabled) {
+  background-color: var(--color-essential-active);
+}
+
+/* ========================================
+   Variant: Outlined
+   ======================================== */
+.variant-outlined {
+  background-color: transparent;
+  border: 1px solid currentColor;
+}
+
+.variant-outlined.color-primary {
+  color: var(--color-primary);
+  border-color: var(--color-primary);
+}
+.variant-outlined.color-primary:hover:not(:disabled) {
+  background-color: var(--color-primary-subtle);
+}
+
+.variant-outlined.color-secondary {
+  color: var(--color-secondary);
+  border-color: var(--color-secondary);
+}
+.variant-outlined.color-secondary:hover:not(:disabled) {
+  background-color: var(--color-secondary-subtle);
+}
+
+.variant-outlined.color-success {
+  color: var(--color-success);
+  border-color: var(--color-success);
+}
+.variant-outlined.color-success:hover:not(:disabled) {
+  background-color: var(--color-success-subtle);
+}
+
+.variant-outlined.color-warning {
+  color: var(--color-warning-hover);
+  border-color: var(--color-warning);
+}
+.variant-outlined.color-warning:hover:not(:disabled) {
+  background-color: var(--color-warning-subtle);
+}
+
+.variant-outlined.color-error {
+  color: var(--color-error);
+  border-color: var(--color-error);
+}
+.variant-outlined.color-error:hover:not(:disabled) {
+  background-color: var(--color-error-subtle);
+}
+
+.variant-outlined.color-essential {
+  color: var(--color-essential);
+  border-color: var(--color-border-default);
+}
+.variant-outlined.color-essential:hover:not(:disabled) {
+  background-color: var(--color-essential-subtle);
+}
+
+/* ========================================
+   Variant: Ghost
+   ======================================== */
+.variant-ghost {
+  background-color: transparent;
+  border: none;
+}
+
+.variant-ghost.color-primary {
+  color: var(--color-primary);
+}
+.variant-ghost.color-primary:hover:not(:disabled) {
+  background-color: var(--color-primary-subtle);
+}
+
+.variant-ghost.color-secondary {
+  color: var(--color-secondary);
+}
+.variant-ghost.color-secondary:hover:not(:disabled) {
+  background-color: var(--color-secondary-subtle);
+}
+
+.variant-ghost.color-success {
+  color: var(--color-success);
+}
+.variant-ghost.color-success:hover:not(:disabled) {
+  background-color: var(--color-success-subtle);
+}
+
+.variant-ghost.color-warning {
+  color: var(--color-warning-hover);
+}
+.variant-ghost.color-warning:hover:not(:disabled) {
+  background-color: var(--color-warning-subtle);
+}
+
+.variant-ghost.color-error {
+  color: var(--color-error);
+}
+.variant-ghost.color-error:hover:not(:disabled) {
+  background-color: var(--color-error-subtle);
+}
+
+.variant-ghost.color-essential {
+  color: var(--color-essential);
+}
+.variant-ghost.color-essential:hover:not(:disabled) {
+  background-color: var(--color-essential-subtle);
+}
+
+/* ========================================
+   Variant: Text
+   ======================================== */
+.variant-text {
+  background-color: transparent;
+  border: none;
+  padding-left: var(--spacing-1);
+  padding-right: var(--spacing-1);
+}
+
+.variant-text.color-primary {
+  color: var(--color-primary);
+}
+.variant-text.color-primary:hover:not(:disabled) {
+  text-decoration: underline;
+}
+
+.variant-text.color-secondary {
+  color: var(--color-secondary);
+}
+.variant-text.color-secondary:hover:not(:disabled) {
+  text-decoration: underline;
+}
+
+.variant-text.color-success {
+  color: var(--color-success);
+}
+.variant-text.color-success:hover:not(:disabled) {
+  text-decoration: underline;
+}
+
+.variant-text.color-warning {
+  color: var(--color-warning-hover);
+}
+.variant-text.color-warning:hover:not(:disabled) {
+  text-decoration: underline;
+}
+
+.variant-text.color-error {
+  color: var(--color-error);
+}
+.variant-text.color-error:hover:not(:disabled) {
+  text-decoration: underline;
+}
+
+.variant-text.color-essential {
+  color: var(--color-essential);
+}
+.variant-text.color-essential:hover:not(:disabled) {
+  text-decoration: underline;
+}
+
+/* ========================================
+   States
+   ======================================== */
+.fullWidth {
+  width: 100%;
+}
+
+.disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.loading {
+  cursor: wait;
+}
+
+.loading .text {
+  opacity: 0.7;
+}
+
+/* ========================================
+   Icons & Spinner
+   ======================================== */
+.iconLeft,
+.iconRight {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.iconLeft svg,
+.iconRight svg {
+  width: 1.2em;
+  height: 1.2em;
+}
+
+.spinner {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  animation: spin 1s linear infinite;
+}
+
+.spinner svg {
+  width: 1.2em;
+  height: 1.2em;
+}
+
+@keyframes spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}

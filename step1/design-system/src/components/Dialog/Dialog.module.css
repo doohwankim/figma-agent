@@ -1,0 +1,149 @@
+/**
+ * Dialog Component Styles
+ * Figma 실제 값 기반 (100% 동기화)
+ */
+
+.dialog {
+  text-align: center;
+}
+
+.body {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--spacing-4);
+  padding: var(--spacing-8) var(--spacing-6) var(--spacing-6);
+}
+
+/* Icon */
+.icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: var(--spacing-12);
+  height: var(--spacing-12);
+  border-radius: var(--radius-full);
+}
+
+.icon svg {
+  width: var(--spacing-6);
+  height: var(--spacing-6);
+}
+
+.icon-info {
+  background-color: var(--color-primary-subtle);
+  color: var(--color-primary);
+}
+
+.icon-success {
+  background-color: var(--color-success-subtle);
+  color: var(--color-success);
+}
+
+.icon-warning {
+  background-color: var(--color-warning-subtle);
+  color: var(--color-warning);
+}
+
+.icon-error {
+  background-color: var(--color-error-subtle);
+  color: var(--color-error);
+}
+
+.icon-confirm {
+  background-color: var(--color-primary-subtle);
+  color: var(--color-primary);
+}
+
+/* Title */
+.title {
+  margin: 0;
+  font-size: var(--text-body-xl-size);
+  font-weight: var(--font-weight-bold);
+  line-height: var(--text-body-xl-line-height);
+  letter-spacing: var(--letter-spacing-default);
+  color: var(--color-text-primary);
+}
+
+/* Description */
+.description {
+  margin: 0;
+  font-size: var(--text-body-md-size);
+  font-weight: var(--font-weight-medium);
+  line-height: var(--text-body-md-line-height);
+  letter-spacing: var(--letter-spacing-default);
+  color: var(--color-gray-600);
+}
+
+/* Actions */
+.actions {
+  display: flex;
+  gap: var(--spacing-3);
+  padding: var(--spacing-4) var(--spacing-6) var(--spacing-6);
+  justify-content: center;
+}
+
+/* Buttons */
+.button {
+  flex: 1;
+  max-width: 160px;
+  padding: 10px var(--spacing-6);
+  border-radius: var(--radius-sm);
+  font-family: inherit;
+  font-size: var(--text-body-md-size);
+  font-weight: var(--font-weight-semibold);
+  letter-spacing: var(--letter-spacing-default);
+  cursor: pointer;
+  transition: var(--transition-fast);
+}
+
+.button:focus-visible {
+  outline: 2px solid var(--color-primary);
+  outline-offset: 2px;
+}
+
+.cancelButton {
+  border: 1px solid var(--color-gray-300);
+  background-color: var(--color-white);
+  color: var(--color-text-primary);
+}
+
+.cancelButton:hover {
+  background-color: var(--color-gray-50);
+  border-color: var(--color-gray-400);
+}
+
+.confirmButton {
+  border: none;
+  background-color: var(--color-primary);
+  color: var(--color-white);
+}
+
+.confirmButton:hover {
+  background-color: var(--color-primary-hover);
+}
+
+/* Confirm button variants by type */
+.confirm-error {
+  background-color: var(--color-error);
+}
+
+.confirm-error:hover {
+  background-color: #ce0000;
+}
+
+.confirm-warning {
+  background-color: var(--color-warning);
+}
+
+.confirm-warning:hover {
+  background-color: #ffa000;
+}
+
+.confirm-success {
+  background-color: var(--color-success);
+}
+
+.confirm-success:hover {
+  background-color: #007a76;
+}

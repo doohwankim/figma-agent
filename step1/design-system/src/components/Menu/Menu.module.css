@@ -1,0 +1,97 @@
+/**
+ * Menu Component Styles
+ * Figma 실제 값 기반 (100% 동기화)
+ */
+
+.trigger {
+  display: inline-flex;
+  cursor: pointer;
+}
+
+.menu {
+  position: fixed;
+  z-index: var(--z-index-dropdown);
+  min-width: 180px;
+  padding: var(--spacing-1) 0;
+  background-color: var(--color-white);
+  border: 1px solid var(--color-gray-200);
+  border-radius: var(--radius-md);
+  box-shadow: var(--shadow-lg);
+  animation: fadeIn 0.15s ease;
+  font-family: var(--font-family-base);
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(calc(-1 * var(--spacing-1)));
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Menu Item */
+.item {
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-2);
+  width: 100%;
+  padding: 10px var(--spacing-4);
+  border: none;
+  background: transparent;
+  font-family: inherit;
+  font-size: var(--text-body-md-size);
+  font-weight: var(--font-weight-medium);
+  line-height: var(--text-body-md-line-height);
+  letter-spacing: var(--letter-spacing-default);
+  color: var(--color-text-primary);
+  text-align: left;
+  cursor: pointer;
+  transition: var(--transition-fast);
+}
+
+.item:hover:not(.disabled) {
+  background-color: var(--color-gray-50);
+}
+
+.item:focus-visible {
+  outline: none;
+  background-color: var(--color-gray-100);
+}
+
+.item.disabled {
+  color: var(--color-gray-400);
+  cursor: not-allowed;
+}
+
+.item.danger {
+  color: var(--color-error);
+}
+
+.item.danger:hover:not(.disabled) {
+  background-color: var(--color-error-subtle);
+}
+
+/* Icon */
+.icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: var(--spacing-5);
+  height: var(--spacing-5);
+  color: currentColor;
+}
+
+.icon svg {
+  width: var(--spacing-5);
+  height: var(--spacing-5);
+}
+
+/* Divider */
+.divider {
+  height: 1px;
+  margin: var(--spacing-1) 0;
+  background-color: var(--color-gray-200);
+}

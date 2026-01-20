@@ -1,0 +1,155 @@
+/**
+ * Radio Component Styles
+ * Figma 실제 값 기반 (100% 동기화)
+ *
+ * Figma 컴포넌트 사양:
+ * - Sizes: lg (24px), md (20px), sm (16px)
+ * - States: Enabled, Hover, Disabled
+ * - isChecked: True, False
+ * - gap: 4px (icon과 label 사이)
+ */
+
+.radio {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--spacing-1);
+  cursor: pointer;
+  user-select: none;
+  font-family: var(--font-family-base);
+}
+
+.radio.disabled {
+  cursor: not-allowed;
+}
+
+.input {
+  position: absolute;
+  opacity: 0;
+  width: 0;
+  height: 0;
+  pointer-events: none;
+}
+
+/* Radio Mark (원형) */
+.radiomark {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: var(--radius-full);
+  border: 1.5px solid var(--color-gray-400);
+  background-color: var(--color-white);
+  transition: var(--transition-fast);
+  flex-shrink: 0;
+}
+
+.radiomark:hover {
+  border-color: var(--color-primary);
+}
+
+/* Size Variants - Figma 실제 값 */
+.size-lg .radiomark {
+  width: 24px;
+  height: 24px;
+}
+
+.size-lg .dot {
+  width: 12px;
+  height: 12px;
+}
+
+.size-lg .label {
+  font-size: var(--text-body-lg-size);
+  line-height: var(--text-body-lg-line-height);
+}
+
+.size-md .radiomark {
+  width: 20px;
+  height: 20px;
+}
+
+.size-md .dot {
+  width: 10px;
+  height: 10px;
+}
+
+.size-md .label {
+  font-size: var(--text-body-md-size);
+  line-height: var(--text-body-md-line-height);
+}
+
+.size-sm .radiomark {
+  width: 16px;
+  height: 16px;
+}
+
+.size-sm .dot {
+  width: 8px;
+  height: 8px;
+}
+
+.size-sm .label {
+  font-size: var(--text-body-sm-size);
+  line-height: var(--text-body-sm-line-height);
+}
+
+/* Checked State */
+.radio.checked .radiomark {
+  border-color: var(--color-primary);
+}
+
+.radio.checked .radiomark:hover {
+  border-color: var(--color-primary-hover);
+}
+
+/* Dot (내부 원) */
+.dot {
+  border-radius: var(--radius-full);
+  background-color: var(--color-primary);
+}
+
+.radio.checked:hover .dot {
+  background-color: var(--color-primary-hover);
+}
+
+/* Label */
+.label {
+  color: var(--color-text-primary);
+  font-weight: var(--font-weight-medium);
+  letter-spacing: var(--letter-spacing-default);
+}
+
+/* Disabled State - Figma: rgba(67, 73, 78, 0.32) */
+.radio.disabled .radiomark {
+  background-color: var(--color-gray-100);
+  border-color: rgba(67, 73, 78, 0.32);
+}
+
+.radio.disabled.checked .dot {
+  background-color: rgba(67, 73, 78, 0.32);
+}
+
+.radio.disabled .label {
+  color: rgba(67, 73, 78, 0.32);
+}
+
+/* Focus State */
+.input:focus-visible + .radiomark {
+  outline: 2px solid var(--color-primary);
+  outline-offset: 2px;
+}
+
+/* Radio Group */
+.radioGroup {
+  display: flex;
+  gap: var(--spacing-4);
+}
+
+.radioGroup.vertical {
+  flex-direction: column;
+  gap: var(--spacing-3);
+}
+
+.radioGroup.horizontal {
+  flex-direction: row;
+  flex-wrap: wrap;
+}

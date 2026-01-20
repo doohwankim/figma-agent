@@ -1,0 +1,170 @@
+/**
+ * MEDIGATE Design System - Color Tokens
+ * AI 추출 기반 + 검수 완료
+ * 원본: Figma 디자인 시스템 v2.0
+ */
+
+:root {
+  /* ========================================
+     Primitives - Black & White
+     ======================================== */
+  --color-black: #1A1A1A;
+  --color-white: #FFFFFF;
+
+  /* ========================================
+     Primitives - Blue (Primary)
+     ======================================== */
+  --color-blue-900: #1045A1;
+  --color-blue-800: #1764C0;
+  --color-blue-700: #1A75D2;
+  --color-blue-600: #1F87E5;
+  --color-blue-500: #2194F3;  /* Main */
+  --color-blue-400: #42A4F5;
+  --color-blue-300: #63B4F6;
+  --color-blue-200: #90C9F9;
+  --color-blue-100: #BBDEFB;
+  --color-blue-50: #E3F2FD;
+
+  /* ========================================
+     Primitives - Indigo
+     ======================================== */
+  --color-indigo-900: #171E54;
+  --color-indigo-800: #222E6B;
+  --color-indigo-700: #2A3777;
+  --color-indigo-600: #324082;
+  --color-indigo-500: #38488B;
+  --color-indigo-400: #54619A;
+  --color-indigo-300: #717DAB;
+  --color-indigo-200: #98A1C3;
+  --color-indigo-100: #C0C6DB;
+  --color-indigo-50: #E6E8F0;
+
+  /* ========================================
+     Primitives - Gray
+     ======================================== */
+  --color-gray-900: #2F3337;
+  --color-gray-800: #43494E;
+  --color-gray-700: #595F66;
+  --color-gray-600: #6D767F;
+  --color-gray-500: #848F99;
+  --color-gray-400: #A4ADB4;
+  --color-gray-300: #C1C8CF;
+  --color-gray-200: #E2E7EB;
+  --color-gray-100: #F1F5F8;
+  --color-gray-50: #F5F5F5;
+
+  /* ========================================
+     Primitives - Red (Error/Danger)
+     ======================================== */
+  --color-red-900: #CE0000;
+  --color-red-800: #DF000F;
+  --color-red-700: #EC0017;
+  --color-red-600: #FF051D;
+  --color-red-500: #FF2019;  /* Main */
+  --color-red-400: #FF383C;
+  --color-red-300: #FF6666;
+  --color-red-200: #FF9492;
+  --color-red-100: #FFCACF;
+  --color-red-50: #FFEAED;
+
+  /* ========================================
+     Primitives - Yellow (Warning)
+     ======================================== */
+  --color-yellow-900: #FF6F00;
+  --color-yellow-800: #FF8F00;
+  --color-yellow-700: #FFA000;
+  --color-yellow-600: #FFB300;
+  --color-yellow-500: #FFC107;  /* Main */
+  --color-yellow-400: #FFCA28;
+  --color-yellow-300: #FFD54F;
+  --color-yellow-200: #FFE082;
+  --color-yellow-100: #FFECB3;
+  --color-yellow-50: #FFF8E1;
+
+  /* ========================================
+     Primitives - Green/Teal (Success)
+     ======================================== */
+  --color-teal-900: #004E48;
+  --color-teal-800: #006A66;
+  --color-teal-700: #007A76;
+  --color-teal-600: #008A87;
+  --color-teal-500: #009795;  /* Main */
+  --color-teal-400: #00A7A7;
+  --color-teal-300: #43B7B8;
+  --color-teal-200: #7CCBCD;
+  --color-teal-100: #B1DFE1;
+  --color-teal-50: #E0F2F3;
+
+  /* ========================================
+     Semantic Colors - Primary
+     ======================================== */
+  --color-primary: var(--color-blue-500);
+  --color-primary-hover: var(--color-blue-600);
+  --color-primary-active: var(--color-blue-700);
+  --color-primary-subtle: var(--color-blue-50);
+  --color-primary-subtle-hover: var(--color-blue-100);
+
+  /* ========================================
+     Semantic Colors - Secondary
+     ======================================== */
+  --color-secondary: var(--color-indigo-500);
+  --color-secondary-hover: var(--color-indigo-600);
+  --color-secondary-active: var(--color-indigo-700);
+  --color-secondary-subtle: var(--color-indigo-50);
+
+  /* ========================================
+     Semantic Colors - Success
+     ======================================== */
+  --color-success: var(--color-teal-500);
+  --color-success-hover: var(--color-teal-600);
+  --color-success-active: var(--color-teal-700);
+  --color-success-subtle: var(--color-teal-50);
+
+  /* ========================================
+     Semantic Colors - Warning
+     ======================================== */
+  --color-warning: var(--color-yellow-500);
+  --color-warning-hover: var(--color-yellow-600);
+  --color-warning-active: var(--color-yellow-700);
+  --color-warning-subtle: var(--color-yellow-50);
+
+  /* ========================================
+     Semantic Colors - Error/Danger
+     ======================================== */
+  --color-error: var(--color-red-500);
+  --color-error-hover: var(--color-red-600);
+  --color-error-active: var(--color-red-700);
+  --color-error-subtle: var(--color-red-50);
+
+  /* ========================================
+     Semantic Colors - Essential (Neutral)
+     ======================================== */
+  --color-essential: var(--color-gray-700);
+  --color-essential-hover: var(--color-gray-800);
+  --color-essential-active: var(--color-gray-900);
+  --color-essential-subtle: var(--color-gray-100);
+
+  /* ========================================
+     Semantic Colors - Text
+     ======================================== */
+  --color-text-primary: var(--color-black);
+  --color-text-secondary: var(--color-gray-700);
+  --color-text-tertiary: var(--color-gray-500);
+  --color-text-disabled: var(--color-gray-400);
+  --color-text-inverse: var(--color-white);
+
+  /* ========================================
+     Semantic Colors - Background
+     ======================================== */
+  --color-bg-primary: var(--color-white);
+  --color-bg-secondary: var(--color-gray-50);
+  --color-bg-tertiary: var(--color-gray-100);
+  --color-bg-disabled: var(--color-gray-200);
+
+  /* ========================================
+     Semantic Colors - Border
+     ======================================== */
+  --color-border-default: var(--color-gray-300);
+  --color-border-strong: var(--color-gray-500);
+  --color-border-subtle: var(--color-gray-200);
+}

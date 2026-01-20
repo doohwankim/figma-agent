@@ -1,0 +1,292 @@
+/**
+ * MEDIGATE Design System - Typography Tokens
+ * Figma 실제 값 기반 (100% 동기화)
+ * Font Family: SUIT
+ *
+ * 추출 소스: Figma 디자인 시스템 v2.0 > Typography
+ */
+
+@import url('https://cdn.jsdelivr.net/gh/sunn-us/SUIT/fonts/variable/woff2/SUIT-Variable.css');
+
+:root {
+  /* ========================================
+     Font Family
+     ======================================== */
+  --font-family-base: 'SUIT Variable', 'SUIT', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+
+  /* ========================================
+     Font Weight (Figma 실제 값)
+     ======================================== */
+  --font-weight-regular: 400;
+  --font-weight-medium: 500;
+  --font-weight-semibold: 600;
+  --font-weight-bold: 700;
+  --font-weight-extrabold: 800;
+  --font-weight-black: 900;
+
+  /* ========================================
+     Font Size (Figma 실제 값)
+     ======================================== */
+  --font-size-xs: 10px;   /* Label xs */
+  --font-size-sm: 12px;   /* Body sm, Label sm */
+  --font-size-md: 14px;   /* Body md, Label md */
+  --font-size-lg: 16px;   /* Body lg */
+  --font-size-xl: 20px;   /* Body xl */
+  --font-size-2xl: 24px;  /* Headline sm */
+  --font-size-3xl: 28px;  /* Headline md */
+  --font-size-4xl: 32px;  /* Headline lg */
+  --font-size-5xl: 36px;  /* Display sm */
+  --font-size-6xl: 45px;  /* Display md */
+  --font-size-7xl: 57px;  /* Display lg */
+
+  /* ========================================
+     Letter Spacing (Figma: -3% 전역)
+     ======================================== */
+  --letter-spacing-default: -0.03em;
+
+  /* ========================================
+     Display Typography (Figma 실제 값)
+     - Display lg: 57px / line-height 64px (1.12) / -3%
+     - Display md: 45px / line-height 52px (1.16) / -3%
+     - Display sm: 36px / line-height 44px (1.22) / -3%
+     ======================================== */
+  --text-display-lg-size: 57px;
+  --text-display-lg-line-height: 1.12;
+  --text-display-lg-letter-spacing: var(--letter-spacing-default);
+
+  --text-display-md-size: 45px;
+  --text-display-md-line-height: 1.16;
+  --text-display-md-letter-spacing: var(--letter-spacing-default);
+
+  --text-display-sm-size: 36px;
+  --text-display-sm-line-height: 1.22;
+  --text-display-sm-letter-spacing: var(--letter-spacing-default);
+
+  /* ========================================
+     Headline Typography (Figma 실제 값)
+     - Headline lg: 32px / line-height 40px (1.25) / -3%
+     - Headline md: 28px / line-height 36px (1.29) / -3%
+     - Headline sm: 24px / line-height 32px (1.33) / -3%
+     ======================================== */
+  --text-headline-lg-size: 32px;
+  --text-headline-lg-line-height: 1.25;
+  --text-headline-lg-letter-spacing: var(--letter-spacing-default);
+
+  --text-headline-md-size: 28px;
+  --text-headline-md-line-height: 1.29;
+  --text-headline-md-letter-spacing: var(--letter-spacing-default);
+
+  --text-headline-sm-size: 24px;
+  --text-headline-sm-line-height: 1.33;
+  --text-headline-sm-letter-spacing: var(--letter-spacing-default);
+
+  /* ========================================
+     Body Typography (Figma 실제 값)
+     - Body xl: 20px / line-height 28px (1.4) / -3%
+     - Body lg: 16px / line-height 24px (1.5) / -3%
+     - Body md: 14px / line-height 20px (1.43) / -3%
+     - Body sm: 12px / line-height 16px (1.33) / -3%
+     ======================================== */
+  --text-body-xl-size: 20px;
+  --text-body-xl-line-height: 1.4;
+  --text-body-xl-letter-spacing: var(--letter-spacing-default);
+
+  --text-body-lg-size: 16px;
+  --text-body-lg-line-height: 1.5;
+  --text-body-lg-letter-spacing: var(--letter-spacing-default);
+
+  --text-body-md-size: 14px;
+  --text-body-md-line-height: 1.43;
+  --text-body-md-letter-spacing: var(--letter-spacing-default);
+
+  --text-body-sm-size: 12px;
+  --text-body-sm-line-height: 1.33;
+  --text-body-sm-letter-spacing: var(--letter-spacing-default);
+
+  /* ========================================
+     Label Typography (Figma 실제 값)
+     - Label md: 14px / line-height 20px (1.43) / -3%
+     - Label sm: 12px / line-height 16px (1.33) / -3%
+     - Label xs: 10px / line-height 12px (1.2) / -3%
+     ======================================== */
+  --text-label-md-size: 14px;
+  --text-label-md-line-height: 1.43;
+  --text-label-md-letter-spacing: var(--letter-spacing-default);
+
+  --text-label-sm-size: 12px;
+  --text-label-sm-line-height: 1.33;
+  --text-label-sm-letter-spacing: var(--letter-spacing-default);
+
+  --text-label-xs-size: 10px;
+  --text-label-xs-line-height: 1.2;
+  --text-label-xs-letter-spacing: var(--letter-spacing-default);
+}
+
+/* ========================================
+   Utility Classes (Figma 실제 값 반영)
+   ======================================== */
+
+/* Display - weight 500 (medium) */
+.text-display-lg {
+  font-size: var(--text-display-lg-size);
+  font-weight: var(--font-weight-medium);
+  line-height: var(--text-display-lg-line-height);
+  letter-spacing: var(--text-display-lg-letter-spacing);
+}
+
+.text-display-lg-bold {
+  font-size: var(--text-display-lg-size);
+  font-weight: var(--font-weight-bold);
+  line-height: var(--text-display-lg-line-height);
+  letter-spacing: var(--text-display-lg-letter-spacing);
+}
+
+.text-display-md {
+  font-size: var(--text-display-md-size);
+  font-weight: var(--font-weight-medium);
+  line-height: var(--text-display-md-line-height);
+  letter-spacing: var(--text-display-md-letter-spacing);
+}
+
+.text-display-md-bold {
+  font-size: var(--text-display-md-size);
+  font-weight: var(--font-weight-bold);
+  line-height: var(--text-display-md-line-height);
+  letter-spacing: var(--text-display-md-letter-spacing);
+}
+
+.text-display-sm {
+  font-size: var(--text-display-sm-size);
+  font-weight: var(--font-weight-medium);
+  line-height: var(--text-display-sm-line-height);
+  letter-spacing: var(--text-display-sm-letter-spacing);
+}
+
+.text-display-sm-bold {
+  font-size: var(--text-display-sm-size);
+  font-weight: var(--font-weight-bold);
+  line-height: var(--text-display-sm-line-height);
+  letter-spacing: var(--text-display-sm-letter-spacing);
+}
+
+/* Headline - weight 500/700 */
+.text-headline-lg {
+  font-size: var(--text-headline-lg-size);
+  font-weight: var(--font-weight-medium);
+  line-height: var(--text-headline-lg-line-height);
+  letter-spacing: var(--text-headline-lg-letter-spacing);
+}
+
+.text-headline-lg-bold {
+  font-size: var(--text-headline-lg-size);
+  font-weight: var(--font-weight-bold);
+  line-height: var(--text-headline-lg-line-height);
+  letter-spacing: var(--text-headline-lg-letter-spacing);
+}
+
+.text-headline-md {
+  font-size: var(--text-headline-md-size);
+  font-weight: var(--font-weight-medium);
+  line-height: var(--text-headline-md-line-height);
+  letter-spacing: var(--text-headline-md-letter-spacing);
+}
+
+.text-headline-md-bold {
+  font-size: var(--text-headline-md-size);
+  font-weight: var(--font-weight-bold);
+  line-height: var(--text-headline-md-line-height);
+  letter-spacing: var(--text-headline-md-letter-spacing);
+}
+
+.text-headline-sm {
+  font-size: var(--text-headline-sm-size);
+  font-weight: var(--font-weight-medium);
+  line-height: var(--text-headline-sm-line-height);
+  letter-spacing: var(--text-headline-sm-letter-spacing);
+}
+
+.text-headline-sm-bold {
+  font-size: var(--text-headline-sm-size);
+  font-weight: var(--font-weight-bold);
+  line-height: var(--text-headline-sm-line-height);
+  letter-spacing: var(--text-headline-sm-letter-spacing);
+}
+
+/* Body - weight 500/700 */
+.text-body-xl {
+  font-size: var(--text-body-xl-size);
+  font-weight: var(--font-weight-medium);
+  line-height: var(--text-body-xl-line-height);
+  letter-spacing: var(--text-body-xl-letter-spacing);
+}
+
+.text-body-xl-bold {
+  font-size: var(--text-body-xl-size);
+  font-weight: var(--font-weight-bold);
+  line-height: var(--text-body-xl-line-height);
+  letter-spacing: var(--text-body-xl-letter-spacing);
+}
+
+.text-body-lg {
+  font-size: var(--text-body-lg-size);
+  font-weight: var(--font-weight-medium);
+  line-height: var(--text-body-lg-line-height);
+  letter-spacing: var(--text-body-lg-letter-spacing);
+}
+
+.text-body-lg-bold {
+  font-size: var(--text-body-lg-size);
+  font-weight: var(--font-weight-bold);
+  line-height: var(--text-body-lg-line-height);
+  letter-spacing: var(--text-body-lg-letter-spacing);
+}
+
+.text-body-md {
+  font-size: var(--text-body-md-size);
+  font-weight: var(--font-weight-medium);
+  line-height: var(--text-body-md-line-height);
+  letter-spacing: var(--text-body-md-letter-spacing);
+}
+
+.text-body-md-bold {
+  font-size: var(--text-body-md-size);
+  font-weight: var(--font-weight-bold);
+  line-height: var(--text-body-md-line-height);
+  letter-spacing: var(--text-body-md-letter-spacing);
+}
+
+.text-body-sm {
+  font-size: var(--text-body-sm-size);
+  font-weight: var(--font-weight-medium);
+  line-height: var(--text-body-sm-line-height);
+  letter-spacing: var(--text-body-sm-letter-spacing);
+}
+
+.text-body-sm-bold {
+  font-size: var(--text-body-sm-size);
+  font-weight: var(--font-weight-bold);
+  line-height: var(--text-body-sm-line-height);
+  letter-spacing: var(--text-body-sm-letter-spacing);
+}
+
+/* Label - weight 500 */
+.text-label-md {
+  font-size: var(--text-label-md-size);
+  font-weight: var(--font-weight-medium);
+  line-height: var(--text-label-md-line-height);
+  letter-spacing: var(--text-label-md-letter-spacing);
+}
+
+.text-label-sm {
+  font-size: var(--text-label-sm-size);
+  font-weight: var(--font-weight-medium);
+  line-height: var(--text-label-sm-line-height);
+  letter-spacing: var(--text-label-sm-letter-spacing);
+}
+
+.text-label-xs {
+  font-size: var(--text-label-xs-size);
+  font-weight: var(--font-weight-medium);
+  line-height: var(--text-label-xs-line-height);
+  letter-spacing: var(--text-label-xs-letter-spacing);
+}
